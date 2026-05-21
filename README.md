@@ -8,7 +8,7 @@ Um app iOS para consulta de CEPs brasileiros, construído com UIKit e arquitetur
 
 ## 🏛 Arquitetura
 
-- **VIP (Clean Swift)** — View → Interactor → Presenter
+- **VIP** — View → Interactor → Presenter
 - **Factory Pattern** — composição de dependências centralizada
 - **WebService genérico** — camada de rede reutilizável
 
