@@ -1,4 +1,4 @@
-# 📮 ViaCepApp
+# 📮 ViaCep
 
 Um app iOS para consulta de CEPs brasileiros, construído com UIKit e arquitetura VIP (Clean Swift).
 
