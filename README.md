@@ -35,7 +35,6 @@ ViaCep/
 │   ├── View/
 │   ├── Interactor/
 │   ├── Presenter/
-│   └── Coordinator/
 ├── Services/
 │   └── WebService/
 ├── Factories/
