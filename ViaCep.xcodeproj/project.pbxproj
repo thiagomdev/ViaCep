@@ -80,7 +80,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AA0911882E445F7700481DE7 /* Exceptions for "ViaCepTests" folder in "ViaCepTests" target */ = {
+		AA0911882E445F7700481DE7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				ViaCep.xctestplan,
@@ -90,18 +90,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AA0911782E445F7600481DE7 /* ViaCepTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				AA0911882E445F7700481DE7 /* Exceptions for "ViaCepTests" folder in "ViaCepTests" target */,
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = ViaCepTests;
-			sourceTree = "<group>";
-		};
+		AA0911782E445F7600481DE7 /* ViaCepTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (AA0911882E445F7700481DE7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ViaCepTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
