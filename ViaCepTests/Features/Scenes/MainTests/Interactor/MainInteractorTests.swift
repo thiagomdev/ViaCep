@@ -4,7 +4,6 @@ import Foundation
 
 @Suite(.serialized)
 final class MainInteractorTests: LeakTrackerSuite {
-    
     @Test
     func display_cep_success() {
         let (sut, doubles) = makeSut()
@@ -18,6 +17,7 @@ final class MainInteractorTests: LeakTrackerSuite {
     @Test
     func display_cep_failure() {
         let (sut, doubles) = makeSut()
+        
         let samples = [199, 201, 300, 400, 500].enumerated()
         let error = NSError(
             domain: "Wainting for a request conclusion",
@@ -27,7 +27,7 @@ final class MainInteractorTests: LeakTrackerSuite {
         doubles.serviceSpy.expectedResponse = .failure(error)
         
         sut.displayCep("01150011")
-      
+        
         samples.forEach { _, _ in
             #expect(doubles.presenterSpy.messages == [.displayError(message: error.localizedDescription)])
         }
