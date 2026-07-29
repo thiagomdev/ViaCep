@@ -150,39 +150,6 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		AA7271FF2D5D1F1C00835958 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				AA7271FE2D5D1F1C00835958 /* MainFactory.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		AA7272012D5D1F1C00835958 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				AA7272002D5D1F1C00835958 /* MainInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		AA7272032D5D1F1C00835958 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				AA7272022D5D1F1C00835958 /* MainPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		AA7272062D5D1F1C00835958 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				AA7272042D5D1F1C00835958 /* MainRequest.swift */,
-				AA7272052D5D1F1C00835958 /* MainService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		AA7272092D5D1F1C00835958 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,11 +162,12 @@
 		AA72720A2D5D1F1C00835958 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				AA7271FE2D5D1F1C00835958 /* MainFactory.swift */,
+				AA7272002D5D1F1C00835958 /* MainInteractor.swift */,
+				AA7272022D5D1F1C00835958 /* MainPresenter.swift */,
+				AA7272042D5D1F1C00835958 /* MainRequest.swift */,
+				AA7272052D5D1F1C00835958 /* MainService.swift */,
 				AA7271FD2D5D1F1C00835958 /* Domain */,
-				AA7271FF2D5D1F1C00835958 /* Factory */,
-				AA7272012D5D1F1C00835958 /* Interactor */,
-				AA7272032D5D1F1C00835958 /* Presenter */,
-				AA7272062D5D1F1C00835958 /* Service */,
 				AA7272092D5D1F1C00835958 /* UI */,
 			);
 			path = Main;
