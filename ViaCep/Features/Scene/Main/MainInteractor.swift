@@ -19,6 +19,7 @@ public final class MainInteractor {
 extension MainInteractor: MainInteracting {
     public func displayCep(_ cep: String) {
         service.fetchDataCep(cep) { [weak self] result in
+            guard self != nil else { return }
             switch result {
             case let .success(cep):
                 self?.presenter.presentCep(cep)

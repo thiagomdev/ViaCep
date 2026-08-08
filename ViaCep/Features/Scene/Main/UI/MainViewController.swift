@@ -27,14 +27,14 @@ public final class MainViewController: UIViewController {
 extension MainViewController {
     private func showAlert() {
         main.alert = { [weak self] cep in
-            guard let self else { return }
+            guard self != nil else { return }
             let alert = UIAlertController(
                 title: "Olá, tudo bem?",
                 message: "Este CEP não existe ou é um CEP invádo. Por favor, tente novamente!",
                 preferredStyle: .alert
             )
             alert.addAction(UIAlertAction(title: "FECHAR", style: .default))
-            present(alert, animated: true)
+            self?.present(alert, animated: true)
         }
     }
 }

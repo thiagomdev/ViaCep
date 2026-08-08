@@ -83,6 +83,7 @@ extension MainView {
     
     private func didDisplayCep(_ cep: DataCep) {
         DispatchQueue.main.async { [weak self] in
+            guard self != nil else { return }
             self?.logradouroLabel.text = "Logradouro: \(cep.logradouro)"
             self?.bairroLabel.text = "Bairro: \(cep.bairro)"
             self?.localidadeLabel.text = "Localidade: \(cep.localidade)"
@@ -97,9 +98,9 @@ extension MainView: MainViewProtocol {
     
     public func didShowErrorMessage(_ message: String) {
         DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            didClearText()
-            self.alert?(message)
+            guard self != nil else { return }
+            self?.didClearText()
+            self?.alert?(message)
         }
     }
 }
