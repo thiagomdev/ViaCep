@@ -3,7 +3,7 @@ import Foundation
 import ViaCep
 
 @Suite(.serialized)
-final class MainServiceTests: LeakTrackerSuite {
+final class MainServiceTests: MemoryLeakTrackingSuite {
 
     @Test(arguments: [DataCep.fixture()])
     func fetch_data_cep_success(fixture: DataCep) async throws {
@@ -33,13 +33,12 @@ final class MainServiceTests: LeakTrackerSuite {
 }
 
 extension MainServiceTests {
-    private func makeSut(
-        source: SourceLocation = #_sourceLocation) -> (sut: MainService, networkingSpy: NetworkingSpy) {
+    private func makeSut(source: SourceLocation = #_sourceLocation) -> (sut: MainService, networkingSpy: NetworkingSpy) {
         let networkingSpy = NetworkingSpy()
         let sut = MainService(networking: networkingSpy)
         
-        track(sut, source: source)
-        track(networkingSpy, source: source)
+        trackForMemoryLeak(sut, source: source)
+        trackForMemoryLeak(networkingSpy, source: source)
         
         return (sut, networkingSpy)
     }

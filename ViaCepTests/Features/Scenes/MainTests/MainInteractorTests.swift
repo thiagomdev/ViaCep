@@ -3,7 +3,7 @@ import Testing
 import Foundation
 
 @Suite(.serialized)
-final class MainInteractorTests: LeakTrackerSuite {
+final class MainInteractorTests: MemoryLeakTrackingSuite {
     @Test
     func display_cep_success() {
         let (sut, doubles) = makeSut()
@@ -49,19 +49,15 @@ extension MainInteractorTests {
         serviceSpy: ServiceMock
     )
     
-    private func makeSut(
-        source: SourceLocation = #_sourceLocation) -> (sut: MainInteractor, doubles: Doubles) {
+    private func makeSut(source: SourceLocation = #_sourceLocation) -> (sut: MainInteractor, doubles: Doubles) {
         
         let serviceSpy = ServiceMock()
         let presenterSpy = MainPresenterSpy()
-        let sut = MainInteractor(
-            presenter: presenterSpy,
-            service: serviceSpy
-        )
+        let sut = MainInteractor(presenter: presenterSpy, service: serviceSpy)
             
-        track(sut, source: source)
-        track(presenterSpy, source: source)
-        track(serviceSpy, source: source)
+        trackForMemoryLeak(sut, source: source)
+        trackForMemoryLeak(presenterSpy, source: source)
+        trackForMemoryLeak(serviceSpy, source: source)
             
         return (sut, (presenterSpy, serviceSpy))
     }

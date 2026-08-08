@@ -3,7 +3,7 @@ import Foundation
 import ViaCep
 
 @Suite(.serialized)
-final class MainPresenterTests: LeakTrackerSuite {
+final class MainPresenterTests: MemoryLeakTrackingSuite {
 
     @Test
     func present_cep() {
@@ -33,8 +33,8 @@ extension MainPresenterTests {
         let sut = MainPresenter()
         sut.mainView = viewControllerSpy
         
-        track(sut, source: source)
-        track(viewControllerSpy, source: source)
+        trackForMemoryLeak(sut, source: source)
+        trackForMemoryLeak(viewControllerSpy, source: source)
 
         return (sut, viewControllerSpy)
     }

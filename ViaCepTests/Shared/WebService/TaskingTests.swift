@@ -3,7 +3,7 @@ import Foundation
 @testable import ViaCep
 
 @Suite(.serialized)
-final class TaskingTests: LeakTrackerSuite {
+final class TaskingTests: MemoryLeakTrackingSuite {
     @Test
     func execute_requestsFromURL() {
         let request = RequestDummy()
@@ -81,8 +81,8 @@ extension TaskingTests {
             httpClient: client
         )
 
-        track(sut, source: source)
-        track(client, source: source)
+        trackForMemoryLeak(sut, source: source)
+        trackForMemoryLeak(client, source: source)
 
         return (sut, client)
     }

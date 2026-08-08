@@ -29,10 +29,10 @@ final class MemoryLeakTracker<T: AnyObject> {
     }
 }
 
-class LeakTrackerSuite {
+class MemoryLeakTrackingSuite {
     private var trackers = [AnyObject]()
     
-    func track<T: AnyObject>(_ instance: T, source: SourceLocation) {
+    func trackForMemoryLeak<T: AnyObject>(_ instance: T, source: SourceLocation) {
         let tracker = MemoryLeakTracker(instance, sourceLocation: source)
         trackers.append(tracker)
     }
